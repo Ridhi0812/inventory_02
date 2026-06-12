@@ -1,0 +1,168 @@
+/* OrderMgmt uses the shared styles from ProductMgmt.css */
+@import './product_mgmt.css';
+
+/* ─── Order-specific ─────────────────────────────────── */
+
+/* Order detail expand row */
+.order-detail-row td {
+  background: var(--bg-surface);
+  padding: 0;
+}
+
+.order-detail-inner {
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+}
+
+.order-detail-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-item-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-item-line:last-child { border-bottom: none; }
+
+.oil-name  { flex: 1; font-weight: 500; color: var(--text-primary); }
+.oil-qty   { font-family: var(--font-mono); color: var(--text-muted); }
+.oil-price { font-family: var(--font-mono); color: var(--success); margin-left: auto; }
+
+/* Order form – product selector */
+.product-selector {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.product-selector-header {
+  display: grid;
+  grid-template-columns: 1fr 80px 100px 36px;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-surface);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.order-line-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 100px 36px;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-line-row:last-child { border-bottom: none; }
+
+.order-line-select,
+.order-line-qty {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.order-line-select:focus,
+.order-line-qty:focus { border-color: var(--accent); }
+
+.order-line-total {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--success);
+}
+
+.btn-remove-line {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--danger);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.btn-remove-line:hover { background: rgba(242,92,92,0.12); }
+
+.btn-add-line {
+  background: none;
+  border: 1px dashed var(--border-light);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.btn-add-line:hover { color: var(--accent); border-color: var(--accent); }
+
+/* order total summary */
+.order-total-summary {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+.ots-label { font-weight: 600; }
+.ots-value {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* expand toggle */
+.btn-expand {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 16px;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s;
+}
+
+.btn-expand:hover { color: var(--accent); }
